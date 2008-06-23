@@ -45,11 +45,14 @@ You can supply the following options for the plugin:
 sub import {
   my ($mixin, %arg) = @_;
 
+
+  my $group_name = $arg{group} || 'undisclosed-recipients';
+
   require App::Addex::Entry;
-  my $group_name = $arg->{group} || 'undisclosed-recipients';
+
   my $nobody = App::Addex::Entry->new({
-    name   => $arg->{name} || 'Undisclosed Recipients',
-    nick   => exists $arg->{nick} ? $arg->{nick} : 'nobody',
+    name   => $arg{name} || 'Undisclosed Recipients',
+    nick   => exists $arg{nick} ? $arg{nick} : 'nobody',
     emails => [ "$group_name: ;" ],
   });
 
@@ -61,7 +64,7 @@ sub import {
 
     my @entries = $self->$original_sub;
 
-    return (@emails, $nobody);
+    return (@entries, $nobody);
   };
 
   Sub::Install::reinstall_sub({
