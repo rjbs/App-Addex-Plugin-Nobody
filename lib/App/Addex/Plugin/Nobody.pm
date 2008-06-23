@@ -40,6 +40,9 @@ You can supply the following options for the plugin:
   group - the name of the address group (default: undisclosed-recipients)
           this option is not well-validated, so maybe you should leave it alone
 
+The entry will have a true C<skip_hiveminder> field, to avoid bizarre
+interactions with the Hiveminder plugin.
+
 =cut
 
 sub import {
@@ -53,7 +56,14 @@ sub import {
   my $nobody = App::Addex::Entry->new({
     name   => $arg{name} || 'Undisclosed Recipients',
     nick   => exists $arg{nick} ? $arg{nick} : 'nobody',
-    emails => [ "$group_name: ;" ],
+    fields => { skip_hiveminder => 1 },
+    emails => [
+      App::Addex::Entry::EmailAddress->new({
+        address  => "$group_name: ;",
+        sends    => 0,
+        receives => 1,
+      }),
+    ],
   });
 
   my $caller = caller;
