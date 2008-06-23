@@ -1,0 +1,5 @@
+
+This is a plugin for App::Addex to automatically add a "nobody" entry.  It's
+useful if you want to send mail to a bunch of bcc recipients with no actual
+addresses listed in the "to" header.
+
