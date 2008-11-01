@@ -11,11 +11,11 @@ App::Addex::Plugin::Nobody - automatically add a recipient that goes nowhere
 
 =head2 VERSION
 
-version 0.001
+version 0.002
 
 =cut
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 =head1 DESCRIPTION
 
