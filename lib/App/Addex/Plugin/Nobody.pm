@@ -4,18 +4,7 @@ use warnings;
 package App::Addex::Plugin::Nobody;
 use 5.006; # our
 use Sub::Install;
-
-=head1 NAME
-
-App::Addex::Plugin::Nobody - automatically add a recipient that goes nowhere
-
-=head2 VERSION
-
-version 0.003
-
-=cut
-
-our $VERSION = '0.003';
+# ABSTRACT: automatically add a recipient that goes nowhere
 
 =head1 DESCRIPTION
 
@@ -83,24 +72,5 @@ sub import {
     as   => 'entries',
   });
 }
-
-=head1 AUTHOR
-
-Ricardo SIGNES, C<< <rjbs@cpan.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.  I will be notified, and then you'll automatically be
-notified of progress on your bug as I make changes.
-
-=head1 COPYRIGHT
-
-Copyright 2008 Ricardo Signes, all rights reserved.
-
-This program is free software; you may redistribute it and/or modify it
-under the same terms as Perl itself.
-
-=cut
 
 1;
