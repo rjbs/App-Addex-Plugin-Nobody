@@ -1,6 +1,8 @@
 Revision history for App-Addex-Plugin-Nobody
 
 {{$NEXT}}
+
+0.006     2021-06-19 13:46:40-04:00 America/New_York
         - update author info
         - add perl support section
 
